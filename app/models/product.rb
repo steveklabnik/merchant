@@ -5,6 +5,8 @@ class Product < ActiveRecord::Base
     greater_than_or_equal_to: 0
   }
 
+  has_many :order_items
+
   def price=(new_price)
     new_price.delete!("$")
     super
